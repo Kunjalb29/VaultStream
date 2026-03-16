@@ -1,10 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import SecureUpload from './components/Upload';
+import Documentation from './components/Documentation';
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
                   Enterprise-grade platform for zero-trust file sharing, generating verifiable, expiring CDN URLs for your payloads.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                  <button className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>Start Distributing</button>
-                  <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>View Documentation</button>
+                  <Link to="/upload" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', textDecoration: 'none' }}>Start Distributing</Link>
+                  <Link to="/docs" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.1rem', textDecoration: 'none' }}>View Documentation</Link>
                 </div>
               </div>
             } />
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/upload" element={<SecureUpload />} />
+            <Route path="/docs" element={<Documentation />} />
           </Routes>
         </div>
       </main>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Lock, Mail, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +14,7 @@ const Register = () => {
     // Mocking auth request
     setTimeout(() => {
       setIsLoading(false);
-      alert('Registration successful! You can now log in.');
+      navigate('/dashboard');
     }, 1500);
   };
 
