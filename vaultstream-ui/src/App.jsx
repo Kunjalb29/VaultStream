@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
+import Dashboard from './components/Dashboard';
+import SecureUpload from './components/Upload';
 
 function App() {
   return (
@@ -28,8 +30,8 @@ function App() {
             } />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<div className="animate-fade-in"><h2 className="text-gradient">My Vault</h2></div>} />
-            <Route path="/upload" element={<div className="animate-fade-in"><h2 className="text-gradient">Secure Upload</h2></div>} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/upload" element={<SecureUpload />} />
           </Routes>
         </div>
       </main>
