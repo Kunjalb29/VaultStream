@@ -15,10 +15,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore VaultStream.Api/VaultStream.Api.csproj
-    - name: Build
-      run: dotnet build VaultStream.Api/VaultStream.Api.csproj --no-restore
+    - name: Build API
+      run: dotnet build VaultStream.Api/VaultStream.Api.csproj
     - name: Test Domain
       run: dotnet test VaultStream.Domain.Tests/VaultStream.Domain.Tests.csproj
     - name: Test Application
