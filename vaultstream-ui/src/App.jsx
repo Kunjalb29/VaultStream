@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -24,7 +26,8 @@ function App() {
                 </div>
               </div>
             } />
-            <Route path="/login" element={<div className="animate-fade-in"><h2 className="text-gradient">Sign In</h2></div>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<div className="animate-fade-in"><h2 className="text-gradient">My Vault</h2></div>} />
             <Route path="/upload" element={<div className="animate-fade-in"><h2 className="text-gradient">Secure Upload</h2></div>} />
           </Routes>
