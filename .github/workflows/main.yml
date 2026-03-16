@@ -18,6 +18,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore VaultStream.Api/VaultStream.Api.csproj
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build VaultStream.Api/VaultStream.Api.csproj --no-restore
+    - name: Test Domain
+      run: dotnet test VaultStream.Domain.Tests/VaultStream.Domain.Tests.csproj
+    - name: Test Application
+      run: dotnet test VaultStream.Application.Tests/VaultStream.Application.Tests.csproj
     - name: Docker Build
       run: docker build -t vaultstream-api:latest .
